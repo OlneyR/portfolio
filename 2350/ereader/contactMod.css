@@ -1,0 +1,71 @@
+@charset "utf-8";
+/* CSS Document */
+
+body {
+	font:62.5%/1.2em Tahoma, Geneva, sans-serif;
+	background:#750000;
+	padding-top:20px;
+}
+
+
+#navigation {
+	width:800px;
+	background:#425E18;
+	margin:0 auto;
+	padding-top:30px;
+	font-size:1.5em;
+	color:#fff;
+	text-align:center;
+	border-bottom:10px solid #750000;
+	padding:5px 0;
+}
+
+#navigation a:link{
+	font:bold 1.2em Tahoma, Geneva, sans-serif;
+	color:#FFCC00;
+	text-decoration:none;
+	padding:10px 10px;
+	text-transform:uppercase;
+}
+
+#navigation a:visited{
+	font:bold 1.2em Tahoma, Geneva, sans-serif;
+	color:#FFCC00;
+	text-decoration:none;
+	padding:10px 10px;
+	text-transform:uppercase;
+}
+
+#navigation a:hover {
+	color:#F50000;
+}
+
+#navigation li {
+	display:inline;
+}
+
+#content {
+	width:800px;
+	height:300px;
+	margin:0 auto;
+	background:#F9FFD6;
+	font-size:1.2em;
+	line-height:1.5em;
+	padding-top:10px;
+	
+}
+
+#content p{
+	margin: 50px 50px 10px;
+	font:1.3em "Courier New", Courier, monospace;
+	color:#360;
+}
+
+#content a{
+	text-decoration:none;
+	color:#010;
+}
+#content a:hover{
+	text-decoration:underline;
+	color:#099;
+}

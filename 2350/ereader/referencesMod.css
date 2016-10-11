@@ -1,0 +1,84 @@
+@charset "UTF-8";
+/* CSS Document */
+
+body {
+	font:62.5%/1.2em Tahoma, Geneva, sans-serif;
+	background:#330000;
+	padding-top:20px;
+}
+
+
+#navigation {
+	width:800px;
+	background:#CC6600;
+	margin:0 auto;
+	padding-top:30px;
+	font-size:1.5em;
+	color:#fff;
+	text-align:center;
+	border-bottom:10px solid #330000;
+	padding:5px 0;
+}
+
+#navigation a:link{
+	font:bold 1.2em Tahoma, Geneva, sans-serif;
+	color:#FFCC00;
+	text-decoration:none;
+	padding:10px 10px;
+	text-transform:uppercase;
+}
+#navigation a:visited{
+	font:bold 1.2em Tahoma, Geneva, sans-serif;
+	color:#FFCC00;
+	text-decoration:none;
+	padding:10px 10px;
+	text-transform:uppercase;
+}
+
+#navigation a:hover {
+	color:#CCFFFF;
+}
+
+#navigation li {
+	display:inline;
+}
+
+#content {
+	width:800px;
+	height:600px;
+	margin:0 auto;
+	background:#F0D0AF;
+	font-size:1.2em;
+	line-height:1.5em;
+	padding-top:10px;
+}
+
+#content ul {
+	margin-top:50px;
+	list-style-type:none;
+	text-align:center;
+}
+
+#content li {
+	padding-bottom:20px;
+}
+
+#content a:link{
+	text-decoration:none;
+	font:1.3em "Courier New", Courier, monospace;
+	color:#333;
+}
+#content a:visited {
+	color:#333;
+}
+
+#content a:hover {
+	color:#00F;
+	text-decoration:underline;
+}
+
+#content p{
+	font:1.3em "Courier New", Courier, monospace;
+	color:#360;
+	margin-top: 150px;
+}

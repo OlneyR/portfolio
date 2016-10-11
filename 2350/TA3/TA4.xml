@@ -1,0 +1,33 @@
+<rss version="2.0">
+<channel>
+	<title>
+		Tech Assignment 4
+	</title>
+	<link>
+		./TA3.html
+	</link>
+	<description>
+		Short list of random links
+	</description>
+	<item>
+		<title>Tech Assignment Index</title>
+		<link>http://students.uta.edu/rc/rco2253</link>
+		<description>RIP first hosting location.</description>
+	</item>
+	<item>
+		<title>Tech Assignment 3</title>
+		<link>http://students.uta.edu/rc/rco2253/TA3.html</link>
+		<description>RIP first hosting location.</description>
+	</item>
+	<item>
+		<title>Principia Discordia</title>
+		<link>http://www.principiadiscordia.com/</link>
+		<description>All hail Discordia</description>
+	</item>
+	<item>
+		<title>MS Paint Adventures</title>
+		<link>http://www.mspaintadventures.com/</link>
+		<description>A webcomic</description>
+	</item>
+</channel>
+</rss>
