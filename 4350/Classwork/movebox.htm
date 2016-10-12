@@ -1,0 +1,41 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+ <head>
+  <title> New Document </title>
+  <meta name="Generator" content="EditPlus">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <style>
+	#box1{
+		position: relative;
+		top: 0px;
+		background-color: yellow;
+		width: 200px;
+		height: 200px;}
+  </style>
+  <script>
+	function init() {
+		document.getElementById('up').onclick = function(){move1()}
+		document.getElementById('dw').onclick = function(){move2()}
+	}
+	function move1(){
+		var obj = document.getElementById('box1');
+		var newTop = obj.offsetTop - 50;
+		obj.style.top = newTop + "px";
+	}
+	function move2(){
+		var obj = document.getElementById('box1');
+		var newTop = obj.offsetTop + 50;
+		obj.style.top = newTop + "px";
+	}
+	window.onload = init;
+  </script>
+ </head>
+
+ <body>
+  <div id="box1">
+	<a href="#" id="up">Up</a> | <a href="#" id="dw">Down</a>
+  </div>
+ </body>
+</html>

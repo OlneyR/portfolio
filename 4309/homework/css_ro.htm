@@ -1,0 +1,116 @@
+<!DocType html>
+<HTML>
+<HEAD>
+<TITLE> CTEC 4309 : CSS Assignment </TITLE>
+<STYLE>
+	#container {
+		margin:0 auto;
+	}
+	header {
+		background-image:url(background.gif);
+		background-repeat:no-repeat;
+		width:auto;
+		border-bottom:solid 2px black;
+	}
+	header h1{text-align:center;}
+	header h2{text-align:center;}
+
+	main {
+		margin-left:30px;
+		margin-right:auto;
+	}
+	footer {
+		width:auto;
+		text-align:center;
+		font-family:Arial,Helvetica, sans-serif;
+		font-size:0.8em;
+		border-top:solid 2px black;
+	}
+	nav ul {padding-left:0px;}
+	nav li {
+		list-style-type:none;
+		border-bottom:solid 2px gray;
+	}
+	nav a {text-decoration:none;}
+	nav a:hover{
+		background-color:#FFFF00;
+		font-weight:bold;
+	}
+
+	@media screen and (min-width:768px) {
+		nav{width:130px;}
+		#container{width:90%;}
+		main{width:600px;	margin-right:auto;}
+	}
+
+	@media screen and (max-width: 768px) {
+		header {
+			font-size:0.8em;
+			background-image:url(background_small.gif);
+		}
+		#container{width:90%;}
+		nav{width:82px;}
+		main{width:350px;}
+	}
+
+	@media screen and (min-width:480px) {
+		nav {float:left;	margin-left:10px;}
+		main {float:left;}
+		footer {clear:both;}
+	}
+
+	@media screen and (max-width: 480px) {
+		header{
+			font-size:0.5em;
+			background-position: -103px 0px;
+		}
+		#container{width:350px;}
+	}
+
+
+</STYLE>
+
+</HEAD>
+
+<BODY>
+	
+
+	<div id="container">
+		<header>
+			<h1>A Fake Assignment</h1>
+
+			<h2>For CTEC 4309 CSS Exercise Only</h2>
+		</header>
+
+		<nav>
+			<ul>
+				<li><a href="#">Home</a></li>
+				<li><a href="#">Syllabus</a></li>
+				<li><a href="#">Assignments</a></li>
+				<li><a href="#">Schedule</a></li>
+			</ul>
+		</nav>
+
+
+		<main>
+		<h3>Purpose</h3>
+
+		<p>
+			Demonstrate your ability to conduct research on a specific topic within the scope of Internet marketing communication, learn about relevant literature, synthesize previous findings, formulate hypotheses, design a study, and present your research in the form of an academic paper.
+		</p>
+			
+		<h3>Links</h3>
+			<ul>
+				<li><a href="http://www.library.pitt.edu/guides/business/index.html" target="_new_other1">Company and Industry Research</a>: Research guide provided by University of Pittsburgh. Check out their Internet Resources page.</li>
+				<li><a href="http://www.industrylink.com/" target="_new_other2">Industry Link</a>: Organized links to industry-specific sites.</li>
+				<li><a href="http://www.virtualhosting.com/blog/2007/scientific-web-design-23-actionable-lessons-from-eye-tracking-studies/" target="_new_other3">Lessons from Eyetracking Studies</a> by Christina Laun</li>
+			</ul>
+
+		</main>
+		
+		<footer>
+			CTEC 4309 CSS Assignment
+		</footer>
+	</div>
+</BODY>
+</HTML>

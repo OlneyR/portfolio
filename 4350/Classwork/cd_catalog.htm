@@ -1,0 +1,114 @@
+<!DOCTYPE HTML>
+<html>
+ <head>
+  <title> CTEC 4350: AJAX: CD List </title>
+  <style>
+	.recordBox {width: 400px; margin: 10px; padding: 10px; background-color: #ffffcc; border: 1px black solid;}
+  </style>
+  <script>
+	function init(){
+		document.getElementById('yearRange').onchange = showCD;
+	}
+
+	// declare a variable here to store the xmlHttpRequest object so it can be used in multiple functions
+	var xmlHttp;
+
+	function showCD()
+	{
+		// set up the xmlHttpRequest object
+		xmlHttp=GetXmlHttpObject();
+		if (xmlHttp==null)
+		  {
+			  alert ("Your browser does not support AJAX.");// how to ensure users can still use the applicaiton?
+			  return;
+		  }
+        year = document.getElementById('yearRange').value;
+	    
+	   if (!isNaN(year)){
+	       year = Number(year);
+	       upperBound = year + 9;
+	       lowerBound = year;
+	   }else if(isNaN(year) && (year=="all")){
+	       lowerBound = 0;
+	       upperBound=9999;
+	   }else {year="";}
+	    
+		var url="cd_catalog.xml";
+
+		xmlHttp.onreadystatechange=function(){stateChanged(lowerBound,upperBound)};
+		xmlHttp.open("GET",url,true);
+		xmlHttp.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+		xmlHttp.send();
+	} 
+
+	function stateChanged(lowerBound, upperBound) 
+	{
+		if (xmlHttp.readyState==4)
+		{ 
+			 // get the request result as an XML document
+			 xmlDoc=xmlHttp.responseXML;
+
+			// set the variable to store HTML output
+			var output = "";
+			
+			// store all elements in an array
+			var yearArr = xmlDoc.getElementsByTagName("YEAR");
+			var artistArr = xmlDoc.getElementsByTagName("ARTIST");
+			var titleArr = xmlDoc.getElementsByTagName("TITLE");
+			var priceArr = xmlDoc.getElementsByTagName("PRICE");
+
+			// loop through all "YEAR" elements in the XML document
+			 for (i=0;i<yearArr.length ;i++ )
+			 {
+			    year = yearArr[i].childNodes[0].nodeValue;
+			    if (year >= lowerBound && year < upperBound){
+    				// for each matching record, using the same array index number i for yearArr, artistArr, and titleArr
+    				output = output + "<div class='recordBox'>";
+    				output = output + "<b>Title</b>: " + titleArr[i].childNodes[0].nodeValue;
+    				output = output + "<br><b>Artist</b>: " + artistArr[i].childNodes[0].nodeValue;
+    				output = output + "<br><b>Year</b>: " + yearArr[i].childNodes[0].nodeValue;
+    				output = output + "<br><b>Price</b>: " + priceArr[i].childNodes[0].nodeValue;
+    				output = output + "</div>";
+			    }
+				
+			 }
+			 
+			 // print out the HTML output in the specified div
+			 document.getElementById("container").innerHTML= output;
+		}
+	}
+
+	function GetXmlHttpObject()
+	{
+		var xmlHttp=null;
+		if (window.XMLHttpRequest) {
+			xmlHttp = new window.XMLHttpRequest();// for non-IE browser
+		} else if (window.ActiveXObject) {
+			xmlHttp = new ActiveXObject("Microsoft.XMLHTTP"); // for IE
+		}
+		return xmlHttp;
+	}
+
+	window.onload = init;
+  </script>
+ </head>
+
+ <body>
+	<h1> CD Catalog </h1>
+	<form>
+		<lable for="yearRange">
+		List CDs by their publishing years: 
+		</lable>
+		<select id="yearRange" name="yearRange">
+			<option value=""></option>
+			<option value="all">all years</option>
+			<option value="1970">1970s</option>
+			<option value="1980">1980s</option>
+			<option value="1990">1990s</option>
+		</select>
+	</form>
+	<div id="container">
+	</div>
+  
+ </body>
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE HTML>
+<HTML>
+<HEAD>
+<TITLE> CTEC 4350: Test#2 </TITLE>
+<style>
+	.menuBar {position: absolute; top: 10px; left: 10px; width: 600px; height: 30px;  overflow: hidden; }
+	
+	.menuItem  {position: relative; width: 198px; background-color: white;text-align: center; border: 1px solid #330066; background-color: #cccccc; }
+	
+	.resources {display:none; background-color: #CCFFFF; border:2px solid black;}
+
+</style>
+
+<script>
+	function init(){
+		document.getElementById('s1').onclick = function(){reveal("s1r")};
+		document.getElementById('s2').onclick = function(){reveal("s2r")};
+		document.getElementById('s3').onclick = function(){reveal("s3r")};
+	}
+
+	function reveal(r_id){
+		var obj = document.getElementById(r_id);//show me how to make an if statement testing a CSS state ( if obj.style.display = didn't work)
+		document.getElementById("s1r").style.display="none";
+		document.getElementById("s2r").style.display="none";
+		document.getElementById("s3r").style.display="none";
+		obj.style.display="block";
+	}
+		
+	window.onload = init;
+</script>
+</HEAD>
+
+<BODY>
+
+<table class="menuBar">
+	<tr><td class="menuItem" id='s1'>Research Resources</td>
+	    <td class="menuItem" id='s2'>Services</td> 
+		<td class="menuItem" id='s3'>About the Libraries</td> 
+	</tr>
+</table>
+<br>
+
+<br>
+<div id='s1r' class='resources'>
+	<!-- submenu for Research Resources -->
+	Library Catalog <br>
+	Library Databases A-Z<br>
+	Resources by Subject<br>
+	Find Articles<br>
+	Find Books<br>
+	Find Journals<br>
+	Find News & Newspapers
+</div>
+
+<div id='s2r' class='resources'>
+	<!-- submenu for Services -->
+	Borrow & Renew<br>
+	Reserves<br>
+	Interlibrary Loan<br>
+	Services for Distance Learners<br>
+	Services for Faculty<br>
+</div>
+
+<div id='s3r' class='resources'>
+	<!-- submenu for About the libraries -->
+	Locations & Hours<br>
+	Collections<br>
+	Special Collections & Archives<br>
+	Events, Exhibits & Publications<br>
+	Departments & Staff<br>
+	Spaces & Places<br>
+	Support the Libraries
+</div>
+
+</BODY>
+</HTML>

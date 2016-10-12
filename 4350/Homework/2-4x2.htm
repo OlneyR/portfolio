@@ -1,0 +1,30 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+ <head>
+  <title> New Document </title>
+
+ </head>
+
+ <body>
+  <script>
+  	var days = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
+	var today = new Date();
+	var bday = window.prompt("Enter your birthday (format of YYYY-MM-DD or MM-DD-YYYY.)");
+	
+	var bdayObj = new Date(bday);
+	while (isNaN(bdayObj.getDay()))
+	{
+		bday = window.prompt("Enter your birthday (format of YYYY-MM-DD or MM-DD-YYYY.)");
+	
+		bdayObj = new Date(bday);
+	}
+	document.write(days[bdayObj.getDay()+1]+" was the day you where born.");
+/*	if (dates.compare(bdayObj, today) == 1)
+	{	//this doesn't work
+		document.write("You were born in the future.")
+	}*/
+	//it is off by 1 day. don't know why.
+	
+  </script>
+ </body>
+</html>

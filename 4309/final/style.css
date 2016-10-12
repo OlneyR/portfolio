@@ -1,0 +1,157 @@
+@charset "UTF-8";
+/* CSS Document */
+
+body {
+	 margin-left: auto;
+	 margin-right: auto;
+	 font-family:"Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", "DejaVu Sans", Verdana, sans-serif;
+	 font-size:16px;
+	 background-color:#906;
+	 width:100%;
+	 text-align:center;
+	
+}
+
+#banner {
+	text-align:center;
+	margin-bottom:10px;
+	width:100%;
+	background-color:#FFF;
+	
+	
+}
+
+#navigationmenu {
+	text-align: center;
+	margin-left: auto;
+	 margin-right: auto;
+	 padding-top:25px;
+	 padding-bottom:25px;
+	 background-color:#FFF;
+	 width:100%;
+}
+.homebody {
+	text-align:center;
+}
+
+#mainbody {
+	width:100%;
+	margin-top:10px;
+	background-color:#FFF;
+	height: auto;
+	padding-left: 100px;
+	padding-right: 100px;
+	padding-top: 25px;
+	padding-bottom:25px;
+
+	
+}
+.nvmenu {
+	margin: 22px;
+}
+
+#footer {
+	background-color:#FFF;
+	text-align:center;
+	clear:both;
+	margin-top: 10px;
+	margin-bottom:15px;
+	padding-bottom:25px;
+	
+}
+
+.icons {
+	width: 80px;
+	height:80px;
+	
+}
+#socialmedia {
+	text-align:center;
+	margin-right: auto;
+	margin-left:auto;
+}
+
+a:hover { color: #906; text-decoration: underline;} 
+a { text-decoration: none;} 
+
+#marqueediv {
+	text-align:center;
+	
+	
+}
+
+.marqueehome {
+	width: 500px;
+	height:250px;
+	text-align: center;
+}
+
+#hometext {
+	height:auto;
+	
+	text-align:center;
+}
+
+#map {
+	margin-left: 50px;
+	
+}
+
+#address {
+	
+	width:100%;
+	background-color:#FFF;
+	padding-top: 25px;
+	padding-bottom:25px;
+	text-align:center;
+	height:auto;
+	margin-bottom:10px;
+	margin-top:10px;
+	
+}
+
+#mapas {
+	text-align: center;
+	background-color:#FFF;
+	padding: 60px;
+	margin-right:auto;
+	margin-left:auto;
+}
+
+#homepageimage {
+	text-align: center;
+}
+
+#homeimagediv {
+	text-align: center;
+	height: 700px;
+}
+
+#form {
+	text-align: center;
+}
+
+#homepage{
+	width:100%;
+	background-color:#FFF;
+	padding-top: 25px;
+	padding-bottom:25px;
+	text-align:center;
+	margin-top:10px;
+	
+}
+
+ul
+{
+    list-style-type: none;
+}
+
+#orders {
+	margin-top:10px;
+	background-color:#FFF;
+	padding-top: 25px;
+	padding-bottom:25px;
+	text-align:center;
+	padding-left: 33%;
+	
+}

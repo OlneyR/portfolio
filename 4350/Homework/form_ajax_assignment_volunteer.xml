@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<VolunteerOpp>
+	<CFP>
+		<Days>weekdays</Days>
+		<Org>North Texas Foodbank (Food preparation)</Org>
+	</CFP>
+	<CFP>
+		<Days>weekdays</Days>
+		<Org>ACH Child and Family Services (Web design) </Org>
+	</CFP>
+	<CFP>
+		<Days>weekdays</Days>
+		<Org>The Arlington Humane Society (Social media marketing)</Org>
+	</CFP>
+	<CFP>
+		<Days>weekends</Days>
+		<Org>Excellent TEEN Choice (Tutoring)</Org>
+	</CFP>
+	<CFP>
+		<Days>weekends</Days>
+		<Org>Trash2Treasure 4 Hope (Recycling material processing)</Org>
+	</CFP>
+	<CFP>
+		<Days>weekends</Days>
+		<Org>River Lagacy Nature School (Park cleaning)</Org>
+	</CFP>
+
+
+</VolunteerOpp>

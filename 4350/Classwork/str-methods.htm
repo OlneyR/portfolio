@@ -1,0 +1,33 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+ <head>
+  <title> New Document </title>
+  <meta name="Generator" content="EditPlus">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+ </head>
+
+ <body>
+  
+  <script>
+	var uname= window.prompt("What is your username?");
+	var umin=6;
+	var ufail=" ";
+	why(uname, umin, ufail);
+	var pass= window.prompt("What is your password?");
+	var pmin=8;
+	var pfail="?";
+	why(pass, pmin, pfail);
+	function why(input,minm,fail)
+	{
+		while (input.length< minm || input.indexOf(fail)>= 0)
+		{
+		if(input.length<minm){input= window.prompt("Must be greater than "+minm+" characters. Try again.");}
+		if(input.indexOf(fail)>=0){input= window.prompt("You cannot use the character \""+fail+"\" in this submission.");}
+		}
+		document.write("done<br>");
+	}
+  </script>
+ </body>
+</html>

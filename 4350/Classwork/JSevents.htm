@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=windows-1252">
+  <title> CTEC 4350: Event Object Properties </title>
+  <meta name="Author" content="Chyng-Yang Jang">
+  <style>
+	#canvas {width: 700px; height: 400px; border: 1px solid black; margin: 10px auto; }
+	#info {width: 700px; height: 400px;  margin: 10px auto; }
+  </style>
+  <script>
+	function init(){
+		document.getElementById('canvas').onmouseup = evtInfo;
+		
+		// also bind the mousemove event to "canvas" and see the result
+
+	}
+
+	function evtInfo(evt){
+		var obj = document.getElementById('info');
+		if (!evt) var evt = window.event;
+		var message = "";
+		if (evt) {
+
+			message = "Mouse point x coordinate within the browser: " + evt.clientX + "<br/>"
+						  + "Mouse point y coordinate within the browser: " + evt.clientY + "<br/>"
+						  + "Event type: " + evt.type + "<br/>";
+
+		} else {
+			message = "The event object is not available.";
+		}
+
+		obj.innerHTML = message;
+	}
+	window.onload = init;
+  </script>
+ </head>
+
+ <body>
+  <div id="canvas"></div>
+  <div id="info">Mouse point x coordinate within the browser: 154<br>Mouse point y coordinate within the browser: 61<br>Event type: mousedown<br></div>
+ 
+
+</body></html>

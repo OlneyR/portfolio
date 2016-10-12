@@ -1,0 +1,138 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+<TITLE> COMM 4350 : Ajax Code Example </TITLE>
+
+<style>
+	#rssMenu {width: 650px; border-top: 2px solid #B70000; border-bottom: 2px solid #B70000; padding: 10px; margin: 10px; margin-bottom: 20px;}
+	.recordBox {width: 650px; border: 1px solid black; padding: 10px; margin: 10px; }
+	.channelTitle {font-family: arial, sans-serif; font-size:120%;	}
+</style>
+
+<script>
+	function init(){
+		document.getElementById('arlingtonWeather').onclick = function(){showInfo('http://wxdata.weather.com/wxdata/weather/rss/local/USTX0045?cm_ven=LWO&cm_cat=rss')};
+		
+		document.getElementById('weatherLink').onclick = function(){showInfo('http://wxdata.weather.com/wxdata/weather/rss/local/76019?cm_ven=LWO&cm_cat=rss')};
+
+		document.getElementById('mashableLink').onclick = function(){showInfo('http://feeds.mashable.com/Mashable?format=xml')};
+		
+		document.getElementById('nytimesLink').onclick = function(){showInfo('http://rss.nytimes.com/services/xml/rss/nyt/Technology.xml')};
+		
+	}
+
+	// declare a variable here to store the xmlHttpRequest object so it can be used in multiple functions
+	var xmlHttp;
+
+
+function showInfo(str){
+	//alert(str);
+	// set up xmlHttpRequest object
+	xmlHttp=GetXmlHttpObject();
+
+	if (xmlHttp==null){
+		alert ("Browser does not support HTTP Request");
+	return;
+	} 
+
+	 // prepare to send the xmlHttpRequest object
+	 
+	 var proxyURL = "proxy.php";
+	 // realDestination will be embedded in a query string
+	 var realDestination=str;
+
+	 var requestURL = proxyURL+"?url="+encodeURIComponent(realDestination);
+	 //alert(requestURL);
+
+	 // catch the readystatechange event and bind it to the processing function
+	 xmlHttp.onreadystatechange=function(){stateChanged(str)};
+
+	 // send the request
+	 xmlHttp.open("GET",requestURL,true);
+	 xmlHttp.send(null);
+}
+ 
+ function stateChanged(str) 
+{ 
+	if (xmlHttp.readyState==4 || xmlHttp.readyState=="complete")
+	{
+	 //alert (xmlHttp.status);
+	 // get the request result as an XML document
+	 xmlDoc=xmlHttp.responseXML;
+
+	// set the variable to store HTML output
+	var output = "";
+
+	
+
+	// get all the channels
+	var channels = xmlDoc.getElementsByTagName("channel");
+	
+	//alert ("channels.length="+channels.length);
+
+		// loop through all "channel" elements in the RSS document
+		 for (i=0;i<channels.length ;i++ )
+		 {
+			//alert (channels[i].getElementsByTagName("title")[0].childNodes[0].nodeValue);
+			// add the channel title to the output
+			output = output + "<span class='channelTitle'>"+channels[i].getElementsByTagName("title")[0].childNodes[0].nodeValue+"</span><br>";
+			
+			// get all items in a channel
+			var items = channels[i].getElementsByTagName("item");
+			
+			// loop through all "item" elements in a channel
+			for (j = 0; j < items.length; j++){
+				output = output + "<div class='recordBox'>";
+				output = output + "<b> " + items[j].getElementsByTagName("title")[0].childNodes[0].nodeValue+"</b>";
+				output = output + "<br><b>Pub Date</b>: " +  items[j].getElementsByTagName("pubDate")[0].childNodes[0].nodeValue;
+				
+				if (items[j].getElementsByTagName("description")[0].childNodes[0]) {
+				output = output + "<br><b>Description</b>:<br> " +  items[j].getElementsByTagName("description")[0].childNodes[0].nodeValue;
+				}
+				output = output + "</div>";
+			}
+			
+		 }
+	
+		 // print out the HTML output in the specified div
+		document.getElementById("records").innerHTML= output;
+	 }
+	  
+} 
+
+	function GetXmlHttpObject()
+	{
+		var xmlHttp=null;
+		if (window.XMLHttpRequest) {
+			xmlHttp = new window.XMLHttpRequest();// for non-IE browser
+		} else if (window.ActiveXObject) {
+			xmlHttp = new ActiveXObject("Microsoft.XMLHTTP"); // for IE
+		}
+		return xmlHttp;
+	}
+
+	window.onload = init;
+
+</script>
+
+
+</HEAD>
+
+<BODY>
+
+<div>
+	<h3>RSS Feeds</h3>
+
+	<div id="rssMenu">
+    	<a href ="#" id="arlingtonWeather">My Local Weather</a>
+		| <a href="#" id="weatherLink">Local Weather</a>
+		| <a href="#" id="mashableLink">Mashable.com</a>
+		| <a href="#" id="nytimesLink">NY Times Tech Section</a>
+		|
+	</div>
+</div>
+
+<div id='records'>
+</div>
+</BODY>
+</HTML>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<!-- saved from url=(0071)http://omega.uta.edu/~cyjang/ctec4350/labex/dhtml/moveObj_hMenu_1.html# -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title> New Document </title>
+<style>
+	#hmenu {position:absolute; overflow: hidden; left: -275px; width:350px; height:30px; border: solid 1px #339900; padding: 5px; font-family: arial, sans-serif;}
+	#harrow {position: absolute; left: 325px; top: 5px; border: solid 1px #339900; font-weight: bold; width:20px; height: 18px; text-align:center; background-color:#336600;}
+	a {text-decoration: none;}
+	#harrow a {color: white;}
+	#display2 {display:none;}
+	
+</style>
+
+<script>
+
+	function init(){
+		document.getElementById('display').onclick = function(){move('hmenu',0,295)};
+		document.getElementById('display2').onclick = function(){move('hmenu',0,-295)};
+	}
+
+	function move(menu_id,mTop,mLeft){
+		var obj = document.getElementById(menu_id);
+		obj.style.top =  obj.offsetTop+mTop +"px";
+		obj.style.left = obj.offsetLeft+mLeft+"px";
+		if ("display") {
+			document.getElementById('display').style.display="none";
+			document.getElementById('display2').style.display="block";
+		} else {
+			document.getElementById('display').style.display="block";
+			document.getElementById('display2').style.display="none";
+		}
+
+	}
+
+	window.onload = init;
+</script>
+
+<style type="text/css"></style></head>
+
+<body>
+
+<nav id="hmenu" style="top: 8px; left: 20px;">
+<a href="#">Link 1</a> | <a href="#">Link 2</a> | <a href="#">Link 3</a> | <a href="#">Link 4</a> | <a href="#">Link 5</a>
+<div id="harrow"><a href="#" id="display"> &gt; </a>
+<a href="#" id="display2"> &lt; </a></div>
+</nav>
+
+
+</body></html>
+
+
+<!--
+Line 6 clearly says left:-276px, but my viewing doesn't show this?
+Also the main goal of alternating the button is glitched to go right and then endless lefts.
+-->

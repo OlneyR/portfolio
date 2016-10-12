@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<!-- saved from url=(0066)http://omega.uta.edu/~cyjang/ctec4350/labex/css/workfile_css_3.htm -->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>CSS Work File</title>
+
+
+</head>
+
+<body>
+<script>
+var num1 = Math.floor(Math.random() * (100 - 2 + 1) + 2);
+//1&2 = Math.floor(Math.random() * ( max - min + 1) + min);written in this format for recyclability
+var num2 = Math.floor(Math.random() * (100 - 2 + 1) + 2);
+var inget = window.prompt(num1+" + "+num2+" = ?");
+var summa = num1 + num2;
+while (inget != summa)
+{
+	if (isNaN(inget))
+	{
+		inget = window.prompt("Please type in numbers, "+num1+" + "+num2+" = ?");
+	}
+	else if (inget.length == 0)
+	{
+		inget = window.prompt("Encouraging response, "+num1+" + "+num2+" = ?");
+	}
+	else if (inget == (summa+1) || inget == (summa-1))
+	{
+		inget = window.prompt("Very close. Try again, "+num1+" + "+num2+" = ?");
+	}
+	else {inget = window.prompt("Try again, "+num1+" + "+num2+" = ?");}
+}
+if (inget == summa)
+{
+	document.write("Correct.");
+}
+</script>
+</body></html>

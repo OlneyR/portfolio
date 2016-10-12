@@ -1,0 +1,150 @@
+body
+{
+	background-color:#e5be83;
+	font-family: sans-serif;
+}
+
+header
+{
+	background-image:url('IrisHeader.jpg');
+	background-repeat: none;
+	background-color:#c58d5c;
+	height: 151px;
+}
+#wrapper
+{
+	width: 900px;
+	height: auto;
+	float: left;
+}
+
+p
+{
+	text-align: center;
+}
+table
+{
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#headerInfo
+{
+	margin-left: 275px;
+	font-size:1.5em;
+	float:left;
+	color:#531812;
+	font-family: Gabriola, cursive, serif;
+}
+
+#account
+{
+	font-size:0.8em;
+	margin-left:70px;
+	margin-right:15px;
+	margin-top:70px;
+	float:left;
+	text-decoration: none;
+	color:#23120c;
+	text-shadow: 1px #000000;
+}
+
+a:link{
+	color:#23120c;
+	text-decoration: none;
+}
+a:visited{
+	color:#a76036;
+	text-decoration: none;
+}
+a:hover{
+	color:#531812;
+	font-weight: bold;
+	text-decoration: none;
+}
+
+#image1
+{
+	float:left;
+	width:207px;
+}
+
+#homeList
+{
+	float:left;
+	width: auto;
+	margin-left: 20px;
+}
+
+#navbreak
+{
+	height: 0px;
+	clear: both;
+}
+
+#nav
+{
+	width: auto;
+	font-size: 1.3em;
+}
+
+#nav ul
+{
+	text-align: center;
+	list-style-type: none;
+}
+
+#nav li
+{
+	display: inline-block;
+	margin:0px 10px;
+}
+
+#nav ul li a
+{
+	text-decoration: none;
+	color:#23120c;
+}
+
+#nav ul li a:visited{color:#a76036;}
+
+#nav ul li a:hover
+{
+	color:#531812;
+	font-weight: bold;
+}
+
+#body
+{
+	color:#23120c;
+	text-align: center;
+	width: 75%;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#footer
+{
+	clear: both;
+	text-align: center;
+	width: 900px;
+}
+
+.products
+{
+	color: #FFFFFF;
+}
+.products tr:nth-child(odd)
+{
+	background-color:#1b0903;
+}
+
+.products tr:nth-child(even)
+{
+	background-color:#531812;
+}
+
+.products td
+{
+	margin: 50px 20px;
+}

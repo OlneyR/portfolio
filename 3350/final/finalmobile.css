@@ -1,0 +1,109 @@
+body{
+	background-color:#010c12;
+	font-family:"FF DIN", "Bell Gothic", sans-serif;
+	color:#243628;
+}
+
+#container{
+	width:100%;
+	margin-right: 0;
+	margin-left: 0;
+	min-width: 0;
+	background-color:#bbbc92;
+	height:auto;
+}
+
+footer{
+	text-align:left;
+	color:#243628;
+	background-color:#8e956c;
+	font-size:0.6em;
+	font-style:italic;
+	padding-top:10px;
+	padding-bottom:25px;
+	padding-left:20px;
+	height:auto;
+}
+footer ul{list-style-type: none;}
+footer li{display:inline;}
+
+footer a:link{color:#e4e5d5;}
+footer a:visited{color:#bbbc92;}
+footer a:hover{color:#2b1919;}
+footer a:active{color:#243628;}
+
+nav{
+	text-align:center;
+	background-color:#8e956c;
+	width:100%;
+	height:auto;
+}
+
+nav a{
+	display:block;
+	padding:0.2em;
+	font-size: 1.3em;
+	font-weight: bold;
+	border-bottom: 1px;
+	border-color: #330000;
+	text-decoration:none;
+	padding-bottom:15px;
+
+}
+nav img{
+	padding-left: 20px;
+}
+nav ul{list-style-type: none;}
+nav a:link{color:#e4e5d5;}
+nav a:visited{color:#bbbc92;}
+nav a:hover{color:#2b1919;}
+nav a:active{color:#243628;}
+
+img{border-style:none;}
+
+#logo{
+	width:40px;
+	height:40px;
+}
+
+#pdf{
+	width:100%;
+	height:950px;
+}
+
+h1{
+	text-indent:-99999px;
+	background-image: url('self-banner-vertical.png');
+}
+
+.portitem ul{
+	list-style-type: none;
+	padding: 0px;
+	margin: 0px;
+}
+.portitem li{
+	padding-top: 20px;
+	padding-bottom: 25px;
+}
+
+.portitem li img{
+	max-width: 100%;
+	height:auto;
+}
+
+h2{
+	padding-left: 20px;
+	text-decoration: underline;
+	text-align:center;
+}
+
+#startimg{
+	width:100%;
+	height:582px;
+	background-repeat: no-repeat;
+}
+
+iframe{
+	width:288px;
+	height:162px;
+}

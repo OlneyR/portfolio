@@ -1,0 +1,131 @@
+html {
+	display: table;
+	margin: auto;
+	background-attachment: fixed;
+	font-family: "BDP OldNeo","Courier New",serif;
+}
+
+body {
+	display:table-cell;
+	vertical-align: middle;
+	background-image:url("zwartevilt.png");
+}
+
+#wrapper {
+	margin:0em;
+	width:100%;
+}
+
+#logo {
+	font-family: "BDP OldNeo","Courier New",serif;
+	text-align: center;
+}
+#logo h1 a {
+	margin:0.5em 0em;
+	font-size: 1em;
+	text-decoration: none;
+}
+#midnav{color:white; text-align:center; margin-top:0.3em;}
+
+.subnav{margin:0.5em 0em;}
+nav,.subnav {font-family: "BDP OldNeo","Courier New",serif;}
+nav ul,.subnav ul {
+	list-style-type: none;
+	margin:0;
+	padding:0;
+	text-align: center;
+}
+nav ul li a{text-decoration: none;font-size:1.3em;padding:0.1em 0.49em;margin:0em 0.7em;}
+nav ul li a:link {color:#FFF;}
+nav ul li a:visited {color:#E8E8E8;}
+nav ul li a:hover {color:#111111;background-color: white;}
+nav ul li a:active {color:#0099FF;}
+
+.subnav ul li a{text-decoration:none;font-size:1.1em;padding:0.3em 0.49em;margin:0.5em 0.4em;}
+.subnav ul li a:link {color:#FFF;}
+.subnav ul li a:visited {color:#E8E8E8;}
+.subnav ul li a:hover {color:#111111;background-color: white;}
+.subnav ul li a:active {color:#0099FF;}
+/*
+#current {}
+*/
+
+#copyright {
+	text-align: center;
+	font-size: 0.75em;
+	color:#FFF;
+	padding-bottom: 0.5em;
+}
+
+.stroke {
+    color: #FFFFFF;
+}
+
+#backdrop p {
+	color:black;
+	font-size: 1.2em;
+	text-align: center;
+}
+
+#backdrop h2 {
+	padding-top: 2em;
+	font-size: 1.9em;
+	color:#111111;
+	text-align: center;
+	font-family: "BDP OldNeo","Courier New",serif;
+}
+#backdrop hr {
+	width:60%;
+	color:white;
+}
+#backdrop {height:23em;background:url("Brushed1.jpg");background-position:center top;}
+
+#backdrop2 p {
+	font-size: 1.2em;
+	text-align: center;
+}
+
+#backdrop2 h2 {
+	padding-top: 2em;
+	font-size: 1.9em;
+	text-align: center;
+	font-family: "BDP OldNeo","Courier New",serif;
+}
+#backdrop2 hr {
+	width:60%;
+	color:white;
+}
+
+#backdrop2 {height:23em;background:url("Brushed2.jpg");background-position:center top;}
+
+.clear {clear:both;}
+
+.gallimg,.gallerytext{margin:0.3em;}
+.gallimg{max-height: 10.625em;}
+.gallerytext{margin-bottom: 1em;max-width:80%;}
+.gallerytext h2,.gallerytext p{color:white;font-family: "BDP OldNeo","Courier New",serif;}
+
+#testimonials{margin:1em;}
+.tesm-text,.tesm-img{margin:0.3em;}
+.tesm-text{margin-bottom: 1em;max-width:80%;}
+.tesm-text h2,.tesm-text h3,.tesm-text p{color:white;font-family: "BDP OldNeo","Courier New",serif;}
+
+form{
+	color:white;
+	font-family: "BDP OldNeo","Courier New",serif;
+}
+#formh2{
+	color:white;
+	font-family: "BDP OldNeo","Courier New",serif;
+}
+
+#contactform {text-align: center;}
+
+#tytext {color:white;font-family: "BDP OldNeo","Courier New",serif;}
+
+#samples {margin: 2em 4.5em;}
+
+#contactinfo {margin: 2.5em 0em;color:white;text-align: center;font-family: "BDP OldNeo","Courier New",serif;}
+
+.contacts{width:200px;}
+.contacts:focus{outline:none;border-color:#0099FF;box-shadow: 0 0 5px #0099FF;}

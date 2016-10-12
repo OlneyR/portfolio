@@ -1,0 +1,66 @@
+<!DOCTYPE HTML>
+<HTML>
+<HEAD>
+<TITLE> CTEC 4350: Move Box </TITLE>
+<style>
+	#box {position: absolute; left: 400px; top: 200px; width: 50px; height: 50px; background-color: #FF6600}
+	#coord {left:100px; top:100px; width:150px; height:50px;}
+	#controller {margin: 10px;}
+	.button {text-align: center; border: 1px solid black; background-color: #000066; color: white; width: 50px}
+	.up, .down {position: relative; left: 51px; clear: left;}
+	.right, .left {float: left;}
+	.right {margin-left: 52px;}
+</style>
+<script>
+
+	function init(){
+		document.getElementById('up').onclick = function(){move(0,-50)};
+		document.getElementById('dw').onclick = function(){move(0,50)};	
+		document.getElementById('lf').onclick = function(){move(-50,0)};	
+		document.getElementById('rt').onclick = function(){move(50,0)};
+		document.getElementById('box').onclick = evtInfo;
+	}
+
+	function evtInfo(evt){
+		var obj = document.getElementById('coord');
+		if (!evt) var evt = window.event;
+		var message = "";
+		if (evt) {
+
+			message = "Box X coordinate: " + evt.clientX + "<br/>"
+						  + "Box Y coordinate: " + evt.clientY + "<br/>";
+
+		} else {
+			message = "The event object is not available.";
+		}
+
+		obj.innerHTML = message;
+	}
+
+	function move(dLeft, dTop){
+		var obj = document.getElementById('box');
+		obj.style.left = (obj.offsetLeft + dLeft) + "px";
+		obj.style.top = (obj.offsetTop + dTop) + "px";
+	}
+
+	window.onload = init;
+</script>
+
+</HEAD>
+
+<BODY>
+
+<div id="controller">
+	<div class="button up" id="up">Up</div>
+	<div class="button left" id="lf">Left</div>
+	<div class="button right" id="rt">Right</div>
+	<div class="button down" id="dw">Down</div>
+</div>
+<div id="coord">Only shows location when box is clicked. Attempted onclick for class button, couldn't retrieve info for id box 
+</div>
+<div id="box">
+</div>
+
+
+</BODY>
+</HTML>

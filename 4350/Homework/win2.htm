@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<!-- saved from url=(0066)http://omega.uta.edu/~cyjang/ctec4350/labex/browserObject/win2.htm -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title> CTEC 4350 Exercise -  Browser Object </title>
+
+<style type="text/css"></style>
+<script language="JavaScript">
+
+	function init() {
+		document.getElementById("one").onclick = function(){direct('http://www.google.com/')};
+		document.getElementById("two").onclick = function(){direct('http://www.yahoo.com/')};
+		document.getElementById("three").onclick = function(){direct('./win1.htm')};
+	}
+	function direct(url) {
+		window.opener.location.href = url;
+	}
+	window.onload = init;
+</script>
+</head>
+<body>
+
+<h2>win2.htm</h2>
+<hr>
+<p>
+<a href="#" id="one">Google</a>
+<a href="#" id="two">Yahoo</a>
+<a href="#" id="three">win1</a>
+</p>
+<hr>
+
+
+
+</body></html>

@@ -1,0 +1,61 @@
+Iris bagel and coffee house
+Online ordering system (for in-store pickup @ estimated or requested time)
+
+Group: Account
+Fields:
+	User ID # {ID}
+	User first name {fname}
+	User last name {lname}
+	Email {email}
+	Password {pass}
+
+Group: Products
+Fields:
+	Product ID # {PID} 0000
+	Product Name {item} "___"
+	Product Price {price} 000.00
+	Product Sales {sale} %amt
+//nope->Product Cost {cost} (price-sale)
+	Product Description {info} "..."
+	Product Image {img} http
+
+Group: Transaction
+Fields:
+	Transactio ID # {TID} 0000auto
+	Products ID # {PIDs} (array)
+	Customer ID # {CID} =account {ID}
+	Products price {prices} 000.00
+	Amounts sold {quants} (array)
+	Total cost {total} 0000.00
+	Pickup month {month}
+	Pickup day {day}
+	Pickup time {time} 0000 (business hours + 00/15/30/45 modifier)
+		
+		[contact info for payment security purposes (name, address, phone#, email)]
+		[info for payment methods (visa, paypal, cash on pickup)]
+
+Group: Products
+Fields:
+	Product ID # {PID}
+	Item name {item}
+	Item description {info}
+	Item price {price}
+
+
+================
+Promotion
+	proID
+	prodID
+	%
+	expiration
+
+Transaction
+	- TID
+	- CID
+	- Instruction
+
+TransactionDetail
+	TDID
+	TID
+	ProdID
+	$

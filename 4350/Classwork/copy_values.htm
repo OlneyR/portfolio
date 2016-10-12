@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=windows-1252">
+  <title> CTEC 4350: Form: Copy Values </title>
+  <style>
+	form div {margin: 10px; font-family: arial, sans-serif; vertical-align: text-top; clear: left; margin: 20px 5px;}
+
+	form div label:first-of-type {display: inline-block; width: 250px; text-align: right; padding: 0px 5px; }
+
+	form section {margin-left: 50px;}
+	
+	.tips {border: 10px solid #ddd; border-radius: 0 30px 30px 30px; padding: 30px; background-color: #ccffff; display: none; position: absolute;}
+
+	#termsAndConditions {
+		display: none;
+	}
+  </style>
+  <script>
+  
+	function Fillinfo(x) {
+		if (x.sameAddr.checked == true)
+		{
+			x.s_street.value = x.street.value;
+			x.s_city.value = x.city.value;
+			x.s_state.value = x.state.value;
+			x.s_zip.value = x.zip.value;
+		}
+		if (x.sameAddr.checked == false)
+		{
+			x.s_street.value = "";
+			x.s_city.value = "";
+			x.s_state.value = "";
+			x.s_zip.value = "";
+		}
+	}
+  
+  </script>
+ </head>
+
+ <body>
+  <h1>Registration Form</h1>
+
+  <form id="registrationForm" action="" method="post">
+    <section>
+	<h2>Billing Address</h2>
+	<div>
+		<label for="street" id="streetLabel">Street</label>
+		<input size="40" name="street" id="street" type="text">		
+	</div>
+	
+	<div>
+		<label for="city" id="cityLabel">City</label>
+		<input size="40" name="city" id="city" type="text">	
+	</div>
+
+	<div>
+		<label for="state" id="stateLabel">State</label>
+		<select name="state" id="state">
+			<option selected="selected"></option>
+			<option>Arkansas</option>
+			<option>Louisiana</option>
+			<option>New Mexico</option>
+			<option>Oklahoma</option>
+			<option>Texas</option>
+		</select>
+	</div>
+
+	<div>
+		<label for="zip" id="zipLabel">Zip</label>
+		<input size="5" name="zip" id="zip" type="text">	
+	</div>
+	</section>
+
+
+	<section>
+	<h2>Shipping Address</h2>
+	<input name="sameAddr" id="sameAddr" type="checkbox" onclick="Fillinfo(this.form)"> Same as billing address  
+	<div>
+		<label for="street" id="s_streetLabel">Street</label>
+		<input size="40" name="s_street" id="s_street" type="text">		
+	</div>
+	
+	<div>
+		<label for="city" id="s_cityLabel">City</label>
+		<input size="40" name="s_city" id="s_city" type="text">	
+	</div>
+
+	<div>
+		<label for="state" id="s_stateLabel">State</label>
+		<select name="s_state" id="s_state">
+			<option selected="selected"></option>
+			<option>Arkansas</option>
+			<option>Louisiana</option>
+			<option>New Mexico</option>
+			<option>Oklahoma</option>
+			<option>Texas</option>
+		</select>	
+	</div>
+
+	<div>
+		<label for="zip" id="s_zipLabel">Zip</label>
+		<input size="5" name="s_zip" id="s_zip" type="text">	
+	</div>
+	</section>
+
+	<div>
+		<label>Terms and Conditions</label>
+		<p id="termsAndConditions">Lorem ipsum dolor sit amet, consectetur 
+adipiscing elit. Aliquam tincidunt, purus in elementum facilisis, augue 
+mi bibendum urna, et hendrerit augue quam vel massa. Proin vel ultricies
+ libero, vitae suscipit orci. Pellentesque scelerisque velit tellus, non
+ placerat lectus ultricies vel. Curabitur elementum lobortis ligula et 
+bibendum. Vivamus sit amet risus ut purus tristique euismod sed et 
+lacus. Vestibulum ac porttitor felis. Aenean egestas leo quis dignissim 
+tincidunt. Integer id velit nec dui tristique accumsan id et quam. </p>
+		<input value="agree" name="terms" id="terms" type="checkbox"> <label for="terms" id="forTerms">By checking this box, I certify that I have read and agreed with the terms and conditions.</label>
+	</div>
+	
+	<div>
+		<label></label>
+		<input value="Submit" name="submit" id="submit" type="submit" disabled>
+	</div>
+  </form>
+
+  <div id="response"></div>
+  
+  
+
+</body></html>

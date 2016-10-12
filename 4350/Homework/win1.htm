@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<!-- saved from url=(0066)http://omega.uta.edu/~cyjang/ctec4350/labex/browserObject/win1.htm -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title> CTEC 4350 Exercise -  Browser Object </title>
+
+<style>
+	#a1 {display: inline-block; background-color: blue; color: white; padding: 0.2em;}
+</style>
+
+<script language="JavaScript">
+
+	function init(){
+		document.getElementById('a1').onclick = function(){openWin('win2.htm')};
+	}
+
+	function openWin (url){
+	// open a new browser window
+		Xpop = (window.screenX - 250);
+		Ypop = (window.screenY);
+		var popup = window.open(url,"newWin", "height=500,width=250,location=no,status=yes");
+		popup.moveTo(Xpop,Ypop);
+	}
+
+	window.onload = init;
+</script>
+
+<style type="text/css"></style></head>
+
+<body>
+<h2>win1.htm</h2>
+<hr>
+<p>
+<span id="a1">Open win2.htm in a new window</span>
+
+</p>
+<hr>
+
+<script>
+//screenX screenY moveTo
+Xpos = window.screenX;
+Ypos = window.screenY;
+Xsize = window.innerWidth;
+Ysize = window.innerHeight;
+//window.moveTo(-250,0); ///////////dur hur ofc this wouldnt work
+
+document.write("Window horizontal position: "+Xpos+"<br>Window vertical position: "+Ypos);
+document.write("<br>Window dimensions are : "+Xsize+" x "+Ysize);
+</script>
+
+
+</body></html>

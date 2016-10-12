@@ -1,0 +1,73 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=windows-1252">
+<title> 4350 : DHTML : Event : Inline Help</title>
+<style>
+	#list {font-size: 1.5em;}
+	#list ul {list-style: none;}
+	#list ul li {margin: 10px; color: #cc3300; width: 200px; border: 1px solid #dddddd;}
+	.helpMessage{position:absolute;display:none;}
+</style>
+
+<script>
+
+function init(){
+	document.getElementById('term1').onclick=showHelp;
+	document.getElementById('term2').onclick=showHelp;
+	document.getElementById('term3').onclick=showHelp;
+}
+
+function showHelp (evt){
+	// get the event object and the event (mouse point) position 
+	var evt = (evt)?evt:((window.event)?event:null);
+	var mouseX = evt.clientX;
+	var mouseY = evt.clientY;
+
+	// get the help text object
+	var obj = document.getElementById(this.id+'help');
+
+	// set the display property and the position of the help text
+	obj.style.display = 'block';
+	obj.style.left=mouseX+"px";
+	obj.style.top=mouseY+"px";
+	
+}
+
+window.onload = init;
+
+</script>
+
+</head>
+
+<body>
+<h3>In-line Help Work File</h3>
+<hr>
+
+<div id="list">
+	Click to see more information.
+
+	<ul>
+		<li id="term1">Web 2.0</li>
+		<li id="term2">DHTML</li>
+		<li id="term3">AJAX</li>
+	</ul>
+</div>
+
+<div class="helpMessage" id="term1help">
+Additional Web 2.0 informaion here.
+</div>
+
+<div class="helpMessage" id="term2help">
+Additional DHTML informaion here.
+</div>
+
+<div class="helpMessage" id="term3help">
+Additional AJAX informaion here.
+</div>
+
+
+<hr>
+<a href="http://omega.uta.edu/%7Ecyjang/ctec4350/">CTEC 4350</a> Example Code
+
+
+</body></html>

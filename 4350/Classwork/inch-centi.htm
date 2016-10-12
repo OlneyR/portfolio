@@ -1,0 +1,25 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+ <head>
+  <title> New Document </title>
+  <meta name="Generator" content="EditPlus">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+ </head>
+
+ <body>
+  <script>
+
+		var inches = window.prompt("Input inches to convert: ","");
+		while (isNaN(inches)||inches=="")
+		{
+			inches = window.prompt("Input inches to convert: (Numbers only)","");
+		}
+		var centis = (inches * 2.54);
+
+		document.write(centis +"cm is "+ inches +"in.");
+
+	</script>
+ </body>
+</html>

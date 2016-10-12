@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<!-- saved from url=(0074)http://omega.uta.edu/~cyjang/ctec4350/labex/dhtml/form_ajax_assignment.htm -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+  <title> CTEC 4350: Exercises: Form Tips</title>
+  <style>
+	form div {margin: 10px; font-family: arial, sans-serif; vertical-align: text-top; clear: left; margin: 30px 5px; padding-left: 35px;}
+
+	form div label:first-of-type {display: block;  padding: 0px 5px; font-size: 1.2em; position: relative; left: -25px; margin-bottom: 10px;}
+
+	form div p {font-size: 0.8em;}
+	
+	.tips {border: 10px solid #ddd; border-radius: 0 30px 30px 30px; padding: 30px; background-color: #ccffff; display: none; position: absolute;}
+
+	#termsAndConditions {
+		display: none;
+	}
+
+	.errMsg {display: block; background-color: white; color: #ff6600; font-size: 0.8em; padding: 2px; position: relative; left: 0px;}
+  </style>
+  <script>
+	function init(){
+		document.getElementById('registrationForm').onsubmit = process;
+		document.getElementById('days_weekdays').onclick = showOppors;
+		document.getElementById('days_weekends').onclick = showOppors;
+	}
+
+	function addErrorMessage(fieldId, msg){
+		//alert(msg);
+		
+		// highlight the lable
+		document.getElementById(fieldId+"Label").style.color = "red";
+
+		// check if an error message span is available
+		if (document.getElementById(fieldId + "ErrMsg"))
+		{
+			// an error message span is already available, use it
+			document.getElementById(fieldId + "ErrMsg").innerHTML = msg;
+			document.getElementById(fieldId + "ErrMsg").style.display = "block";
+		} else {
+			
+			// otherwise, create the error message span
+			var messageSpan = document.createElement("span");
+			messageSpan.className = "errMsg"; // set the CSS class to use
+			messageSpan.id = fieldId + "ErrMsg"; // set the id
+			messageSpan.innerHTML = msg;
+
+			var inputLabel = document.getElementById(fieldId+'Label');
+			inputLabel.parentNode.appendChild(messageSpan);
+			
+		}
+		
+	}
+
+	function showOppors()
+	{
+		console.log("showOppors");
+		// set up the xmlHttpRequest object
+		xmlHttp=GetXmlHttpObject();
+		if (xmlHttp==null)
+		  {
+			  alert ("Your browser does not support AJAX.");// how to ensure users can still use the application?
+			  return;
+		  }
+        var days = this.value;
+	    
+		var url="form_ajax_assignment_volunteer.xml";
+
+		xmlHttp.onreadystatechange=function(){stateChanged(days)};
+		xmlHttp.open("GET",url,true);
+		//xmlHttp.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+		xmlHttp.send();
+	}
+
+	function stateChanged(days) 
+	{
+		if (xmlHttp.readyState==4)
+		{ console.log("stateChange");
+			 // get the request result as an XML document
+			 xmlDoc=xmlHttp.responseXML;
+
+			// set the variable to store HTML output
+			var output = "";
+			
+			// store all elements in an array
+			var daysArr = xmlDoc.getElementsByTagName("Days");
+			var orgArr = xmlDoc.getElementsByTagName("Org");
+
+			console.log("days arr length: "+ daysArr.length);
+			// loop through all "YEAR" elements in the XML document
+			 for (i=0;i<daysArr.length ;i++ )
+			 {
+				//console.log("days: "+days+" daysArr[i]: "+daysArr[i]);
+					if (days == daysArr[i].childNodes[0].nodeValue)
+					{
+						output += orgArr[i].childNodes[0].nodeValue+" <br/>";
+					}
+
+			 }
+			 
+			 // print out the HTML output in the specified div
+			 document.getElementById("details").innerHTML= output;
+		}
+	}
+
+	function GetXmlHttpObject()
+	{
+		var xmlHttp=null;
+		if (window.XMLHttpRequest) {
+			xmlHttp = new window.XMLHttpRequest();// for non-IE browser
+		} else if (window.ActiveXObject) {
+			xmlHttp = new ActiveXObject("Microsoft.XMLHTTP"); // for IE
+		}
+		return xmlHttp;
+	}
+
+	function removeErrorMessage (fieldId){
+		if (document.getElementById(fieldId + "ErrMsg"))
+		{
+			document.getElementById(fieldId+"Label").style.color = "black";
+			document.getElementById(fieldId + "ErrMsg").style.display = "none";
+		}
+		
+	}
+
+	function process(evt){
+		var err = 0;
+		var email = document.getElementById('email').value;
+
+		var emailPattern = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i;
+
+		if (emailPattern.test(email))
+		{
+			removeErrorMessage('email');
+		}else{
+			addErrorMessage('email','The email you entered does not fit general email structure.');
+			err ++;
+		}
+
+		var checks = document.getElementsByName('skill');
+		var checker = 0;
+		for (i=0;i<(checks.length);i++)
+		{
+			console.log(i+":"+checks[i].checked);
+			if (checks[i].checked)
+			{
+				checker =1;
+				break;
+			}
+		}
+		if (checker == 1)
+		{
+			removeErrorMessage('skill');
+		} else{
+			addErrorMessage('skill','You must check at least one option.');
+			err ++;
+		}
+
+		if (err == 0) // data are all valid
+		{
+			message = "You have submitted the information. Thank you for your subscription.";			
+		} else {
+			message = "There are errors.";
+		}
+
+		document.getElementById('response').innerHTML = message;
+
+		// disable submit button
+
+
+		// prevent form submission
+		if (evt.preventDefault)
+		{
+			evt.preventDefault();
+		} else {
+			evt.returnValue = false;
+		}
+
+	}
+
+	window.onload = init;
+  </script>
+ <style type="text/css"></style></head>
+
+ <body>
+  
+  <h1>Volunteer Registration Form</h1>
+
+  <form id="registrationForm" action="" method="post">
+
+	<div>
+		<label for="email" id="emailLabel">Email: </label>
+		<input type="text" size="40" id="email">
+	</div>
+
+	<div>
+		<label id="skillLabel">Skills: </label>
+		<p>Please check all the expertise you have.  At least one skill should be picked.</p>
+		<input type="checkbox" name="skill" value="Accounting" id="skill_accounting"> <label for="skill_accounting">Accounting</label> 
+		<input type="checkbox" name="skill" value="Copyright Laws" id="skill_copyright"> <label for="skill_copyright">Copyright Laws</label> 
+		<input type="checkbox" name="skill" value="Graphic Design" id="skill_graphic"> <label for="skill_graphic">Graphic Design</label> 
+		<input type="checkbox" name="skill" value="Public Relations" id="skill_pr"> <label for="skill_pr">Public Relations</label> 
+		<input type="checkbox" name="skill" value="Search Engine Marketing" id="skill_sem"> <label for="skill_sem">Search Engine Marketing</label> 
+		<input type="checkbox" name="skill" value="Web design" id="skill_webDesign"> <label for="skill_webDesign">Web Design</label> 
+	</div>
+
+	<div>
+		<label id="daysLabel">Volunteer Opportunities: </label>
+		<p>Are you primarily able to contribute during weekdays or weekends?  Click to see corresponding volunteer opportunities.</p> 
+		<input type="radio" name="days" value="weekdays" id="days_weekdays"> <label for="days_weekdays">Week Days</label> 
+		<input type="radio" name="days" value="weekends" id="days_weekends"> <label for="days_weekends">Weekends</label>
+		<div id="details">
+		</div>
+	</div>
+	
+	
+	<div>
+		<label></label>
+		<input type="submit" value="Review your information" name="submit" id="submit">
+	</div>
+  </form>
+
+  <div id="response">
+  
+  </div>
+ 
+
+</body></html>

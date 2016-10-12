@@ -1,0 +1,8 @@
+h1 {color: red; }
+
+.homeHeader {color: red;}
+.otherHeader {color: orange;}
+
+h2 {font-style: italic;}
+h3 {font-family: arial, sans-serif; color: gray}
+#footer {font-size: smaller;}
